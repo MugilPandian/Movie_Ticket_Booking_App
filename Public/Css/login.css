@@ -1,0 +1,51 @@
+body{
+    background-color: #7f5a83;
+    background: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%) no-repeat center center fixed;
+}
+
+.navBar{
+    background: white;
+    min-width:100%;
+    overflow: hidden;
+    text-align: center;
+}
+
+.navBar h1{
+    float: left;
+}
+
+.nav-right{
+    padding-top: 5px;
+    padding-right: 15px;
+    float:right;
+}
+
+.con1{
+    background-color: #bdd4e7;
+    background-image: linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%);
+    width:500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+input{
+    width: 200px;
+}
+
+.form-group{
+    font-weight: bold;
+    color:black;
+    padding:5px;
+}
+
+small{
+    color:white;
+    font-weight: bold;
+}
+
+.btn{
+    padding:5px;
+}
