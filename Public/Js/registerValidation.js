@@ -1,0 +1,53 @@
+function isValid() {
+    var name=document.getElementById("name");
+    var nameReg=/^[A-Z ]+$/;
+    if(name.value.match(nameReg))
+        document.getElementById("nameHelp").innerHTML="";
+    else if(name.value.length==0) {
+        document.getElementById("nameHelp").innerHTML="Enter Your Name";
+        return false;
+    }
+    else {
+        document.getElementById("nameHelp").innerHTML="Enter a Valid Name";
+        return false;
+    }
+    console.log(name);
+    var email=document.getElementById("email");
+    var emaiReg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if(email.value.match(emailReg))
+        document.getElementById("emailHelp").innerHTML="";
+    else if(email.value.length===0) {
+        document.getElementById("emailHelp").innerHTML="Enter an Email ID";
+        return false;
+    }
+    else {
+        document.getElementById("emailHelp").innerHTML="Enter a Valid Email ID";
+        return false;
+    }
+
+    var pwd=document.getElementById("password");
+    if(pwd.value.length===0) {
+        document.getElementById("pwdHelp").innerHTML="Enter a Password";
+        return false;
+    }
+    else if(pwd.value.length<9) {
+        document.getElementById("pwdHelp").innerHTML="Password must contain atleast 8 characters";
+        return false;
+    }
+    else 
+        document.getElementById("pwdHelp").innerHTML="";
+
+    var cpwd = document.getElementById("Cpassword");
+    if(cpwd.value.length===0) {
+        document.getElementById("cpwdHelp").innerHTML="Enter a Password to Confirm";
+        return false;
+    }
+
+    if(pwd.value === cpwd.value){
+        alert("Registration Successfull !");
+    }
+    else {
+        document.getElementById("pwdHelp").innerHTML="Passwords do not match";
+        return false;
+    }
+}

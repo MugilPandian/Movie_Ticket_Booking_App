@@ -4,6 +4,7 @@ var bodyParser =require('body-parser');
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static(__dirname));
+app.use(express.json());
 
 app.set('views','./views');
 app.set('view engine','ejs');
