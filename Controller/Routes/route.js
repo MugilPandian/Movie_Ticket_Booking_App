@@ -92,19 +92,20 @@ app.post('/userreg',async(req,res)=>{
 //Movies
 app.post('/movie',async(req,res)=>{
     var movie=req.body.sel;
-    if(movie.length>0){
-        console.log(movie);
-        connection.query('SELECT Seats_Available FROM MovieList WHERE Movie_Name = ?',[movie],(err,results)=>{
-            res.render('seat_booking',{det:results})
-        })
+    var seat=req.body.SEAT;
+    if(movie.length>0&&seat>0){
+        console.log(movie+" "+seat);
+        connection.query('UPDATE MovieList SET Seats_Available = Seats_Available - ?,Seats_Booked=Seats_Booked + ? WHERE Movie_Name = ?',[seat,seat,movie]);
+        res.render('booked',{a:movie,b:seat});
     }
 })
 
+
 //404
-// app.get('*',(req,res)=>{
-//     res.render('pag404');
-//     console.log('page not found');
-// })
+app.get('*',(req,res)=>{
+    res.render('pag404');
+    console.log('page not found');
+})
 
 //LOGOUT
 app.get('/logout',(req,res)=>{
