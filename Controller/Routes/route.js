@@ -8,8 +8,6 @@ app.use(session({secret:"scientist21062001",
                 resave:false,
                 saveUninitialized:false}))
 
-
-
 connection.connect((err) => {
     if(err) throw err;
     console.log('Connection successful');
@@ -93,10 +91,11 @@ app.post('/userreg',async(req,res)=>{
 app.post('/movie',async(req,res)=>{
     var movie=req.body.sel;
     var seat=req.body.SEAT;
+    var amt=seat*100;
     if(movie.length>0&&seat>0){
         console.log(movie+" "+seat);
         connection.query('UPDATE MovieList SET Seats_Available = Seats_Available - ?,Seats_Booked=Seats_Booked + ? WHERE Movie_Name = ?',[seat,seat,movie]);
-        res.render('booked',{a:movie,b:seat});
+        res.render('booked',{a:movie,b:seat,c:amt});
     }
 })
 
