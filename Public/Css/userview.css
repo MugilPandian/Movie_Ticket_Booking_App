@@ -1,0 +1,17 @@
+body {
+    background-color:#ff4e00;
+    background:linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%) no-repeat center center fixed;
+}
+.container{
+    background-color: red;
+}
+.row{
+    background-color: white;
+    margin: 10px;
+}
+.title1{
+    padding: 5px;
+}
+.mov{
+    background-color: aqua;
+}

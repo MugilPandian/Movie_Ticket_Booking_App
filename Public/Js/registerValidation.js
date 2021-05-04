@@ -1,9 +1,12 @@
 function isValid() {
-    var name=document.getElementById("name");
-    var nameReg=/^[A-Z ]+$/;
-    if(name.value.match(nameReg))
+    var name=document.getElementById("name").value;
+    var nameReg=/^[A-Za-z ]+$/;
+    alert(name.match(/^[A-Za-z ]+$/));
+    alert(name.length);
+    if(name.match(nameReg)===null){
         document.getElementById("nameHelp").innerHTML="";
-    else if(name.value.length==0) {
+    }
+    else if(name.length==0) {
         document.getElementById("nameHelp").innerHTML="Enter Your Name";
         return false;
     }
@@ -11,7 +14,7 @@ function isValid() {
         document.getElementById("nameHelp").innerHTML="Enter a Valid Name";
         return false;
     }
-    console.log(name);
+    
     var email=document.getElementById("email");
     var emaiReg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if(email.value.match(emailReg))
