@@ -76,7 +76,7 @@ app.get('/reg',async(req,res)=>{
 
 app.post('/userreg',async(req,res)=>{
     console.log("User Reg");
-    var i=3;
+    var i=4;
     var id="U0"+(i++);
     
     var name=req.body.Name;
@@ -92,6 +92,7 @@ app.post('/movie',async(req,res)=>{
     var movie=req.body.sel;
     var seat=req.body.SEAT;
     var amt=seat*100;
+    var seatno=1;
     if(movie.length>0&&seat>0){
         console.log(movie+" "+seat);
         connection.query('UPDATE MovieList SET Seats_Available = Seats_Available - ?,Seats_Booked=Seats_Booked + ? WHERE Movie_Name = ?',[seat,seat,movie]);
